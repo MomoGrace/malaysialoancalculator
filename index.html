@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-MY">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loan Calculator Malaysia | Car, Home &amp; Personal Loan Repayment Calculator</title>
+  <meta name="description" content="Free Malaysia loan calculator to estimate monthly repayment, total interest and total payment for car loans, home loans, personal loans and other financing examples." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="LoanCalc Malaysia" />
+  <link rel="canonical" href="https://www.malaysialoancalculator.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Loan Calculator Malaysia | Car, Home &amp; Personal Loan Repayment Calculator" />
+  <meta property="og:description" content="Free Malaysia loan calculator to estimate monthly repayment, total interest and total payment for car loans, home loans, personal loans and other financing examples." />
+  <meta property="og:url" content="https://www.malaysialoancalculator.com/" />
+  <meta property="og:site_name" content="LoanCalc Malaysia" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "LoanCalc Malaysia", "url": "https://www.malaysialoancalculator.com/", "inLanguage": "en-MY"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Malaysia Loan Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "MYR"}, "description": "Free Malaysia loan calculator to estimate monthly repayment, total interest and total payment for car loans, home loans, personal loans and other financing examples."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does a loan calculator work in Malaysia?", "acceptedAnswer": {"@type": "Answer", "text": "A loan calculator estimates monthly repayment by using loan amount, interest rate and loan tenure. The result is an estimate and may differ from bank offers, fees or insurance charges."}}, {"@type": "Question", "name": "What information do I need to calculate monthly repayment?", "acceptedAnswer": {"@type": "Answer", "text": "You normally need the loan amount, annual interest rate, loan tenure and the type of loan calculation such as flat rate or reducing balance."}}, {"@type": "Question", "name": "Is this calculator a bank approval tool?", "acceptedAnswer": {"@type": "Answer", "text": "No. This calculator is only an educational estimate. Bank approval depends on income, credit profile, debt level, documents and lender policy."}}, {"@type": "Question", "name": "What is the difference between flat rate and reducing balance?", "acceptedAnswer": {"@type": "Answer", "text": "Flat rate commonly calculates interest on the original principal for the full tenure. Reducing balance calculates interest based on the outstanding balance over time."}}, {"@type": "Question", "name": "How can I reduce my monthly repayment?", "acceptedAnswer": {"@type": "Answer", "text": "You may reduce monthly repayment by lowering the loan amount, increasing down payment, extending tenure or comparing a lower interest rate. A longer tenure may increase total interest."}}, {"@type": "Question", "name": "Can I use this for car, home and personal loans?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The general calculator can estimate different loan examples, but each loan type may have different bank rules and calculation methods."}}, {"@type": "Question", "name": "Why does total interest increase when tenure is longer?", "acceptedAnswer": {"@type": "Answer", "text": "A longer tenure spreads repayment over more months, but interest may be charged for a longer period, increasing the total interest paid."}}, {"@type": "Question", "name": "Are the results guaranteed?", "acceptedAnswer": {"@type": "Answer", "text": "No. All results are estimates only and should be checked with a licensed bank, financial institution or qualified adviser."}}]}</script>
+</head>
+<body>
+
+<div class="topbar">Free Malaysia loan calculators for education and planning. Results are estimates only.</div>
+<header class="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="index.html" aria-label="LoanCalc Malaysia Home">
+      <span class="logo-mark">LC</span>
+      <span>LoanCalc Malaysia</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="car-loan-calculator.html">Car Loan</a>
+      <a href="home-loan-calculator.html">Home Loan</a>
+      <a href="personal-loan-calculator.html">Personal Loan</a>
+      <a href="dsr-calculator.html">DSR</a>
+      <a href="early-settlement-calculator.html">Settlement</a>
+      <a class="nav-cta" href="index.html#calculator">Calculate Now</a>
+    </nav>
+    <span class="mobile-menu-note">Menu links below</span>
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">Malaysia Loan Repayment Tool</span>
+      <h1>Loan Calculator Malaysia</h1>
+      <p class="hero-text">Estimate monthly repayment, total interest and total repayment for car loans, home loans, personal loans and other financing examples in Malaysia.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#calculator">Use Free Calculator</a>
+        <a class="btn btn-secondary" href="car-loan-calculator.html">Car Loan Calculator</a>
+      </div>
+      <div class="hero-mini">
+        <div class="mini-card"><strong>RM</strong><span>Monthly repayment estimate</span></div>
+        <div class="mini-card"><strong>%</strong><span>Interest cost estimate</span></div>
+        <div class="mini-card"><strong>MY</strong><span>Malaysia-focused examples</span></div>
+      </div>
+    </div>
+    <div class="calculator-card" id="calculator">
+      <h2>Free Loan Calculator</h2>
+      <p class="small">Enter your loan details to estimate monthly payment.</p>
+      <div class="form-grid">
+        <div class="field"><label for="loanAmount">Loan Amount (RM)</label><input id="loanAmount" type="number" value="100000" min="0" step="1000"></div>
+        <div class="field"><label for="interestRate">Annual Interest Rate (%)</label><input id="interestRate" type="number" value="4.5" min="0" step="0.01"></div>
+        <div class="field"><label for="loanYears">Loan Tenure (Years)</label><input id="loanYears" type="number" value="7" min="1" step="1"></div>
+        <div class="field"><label for="loanType">Calculation Type</label><select id="loanType"><option value="reducing">Reducing Balance</option><option value="flat">Flat Rate</option></select></div>
+      </div>
+      <div class="result-grid">
+        <div class="result-box"><span>Monthly Payment</span><strong id="monthlyResult">RM0.00</strong></div>
+        <div class="result-box"><span>Total Interest</span><strong id="interestResult">RM0.00</strong></div>
+        <div class="result-box"><span>Total Repayment</span><strong id="totalResult">RM0.00</strong></div>
+      </div>
+      <div class="bar-wrap"><div class="bar-principal"></div><div class="bar-interest"></div></div>
+      <div class="legend"><span><i class="dot dot-principal"></i>Principal</span><span><i class="dot dot-interest"></i>Estimated interest</span></div>
+      <div class="alert">This calculator is for general planning only. Actual bank repayment may include fees, insurance, stamp duty, legal cost or other charges.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="section-head">
+    <h2>Popular Malaysia Loan Calculators</h2>
+    <p>Use these focused tools to estimate different financing scenarios before you compare offers or speak with a lender.</p>
+  </div>
+  <div class="cards">
+    <a class="card" href="car-loan-calculator.html"><div class="card-icon">🚗</div><h3>Car Loan Calculator</h3><p>Estimate monthly instalment using vehicle price, down payment, flat interest rate and loan tenure.</p></a>
+    <a class="card" href="home-loan-calculator.html"><div class="card-icon">🏠</div><h3>Home Loan Calculator</h3><p>Estimate mortgage monthly repayment using loan amount, interest rate and repayment period.</p></a>
+    <a class="card" href="personal-loan-calculator.html"><div class="card-icon">💳</div><h3>Personal Loan Calculator</h3><p>Estimate monthly repayment and total cost before applying for personal financing.</p></a>
+    <a class="card" href="dsr-calculator.html"><div class="card-icon">📊</div><h3>DSR Calculator</h3><p>Estimate your debt service ratio based on monthly income and current debt commitments.</p></a>
+    <a class="card" href="early-settlement-calculator.html"><div class="card-icon">✅</div><h3>Early Settlement Calculator</h3><p>Estimate remaining balance and possible interest exposure when planning early repayment.</p></a>
+    <a class="card" href="disclaimer.html"><div class="card-icon">⚠️</div><h3>Before You Apply</h3><p>Understand why calculator results are estimates and not official loan approval or advice.</p></a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="content-card">
+    <h2>How to Calculate Monthly Loan Repayment in Malaysia</h2>
+    <p>A Malaysia loan calculator helps you estimate how much you may need to pay every month based on the loan amount, interest rate and loan tenure. For many loans, a longer tenure can reduce the monthly payment but may increase the total interest paid over time.</p>
+    <p>For a reducing balance loan, the monthly instalment is usually estimated using an amortisation formula. For a flat rate loan, the interest is often calculated on the original loan amount for the full loan period.</p>
+    <div class="formula">Monthly repayment depends on: loan amount + interest rate + loan tenure + calculation method</div>
+    <p>Use the calculator above as a first planning step. After that, compare the result with actual offers from banks, financial institutions or licensed lenders.</p>
+  </div>
+
+  <div class="two-col">
+    <div class="content-card">
+      <h3>Reducing Balance Example</h3>
+      <p>Commonly used for mortgages and many personal financing examples. Interest is calculated based on outstanding balance over time.</p>
+    </div>
+    <div class="content-card">
+      <h3>Flat Rate Example</h3>
+      <p>Commonly seen in hire purchase or car loan examples. Interest is calculated based on the original principal amount.</p>
+    </div>
+  </div>
+
+  <div class="ad-placeholder">AdSense placeholder: place approved Google ad code here after your account is approved.</div>
+
+  <div class="content-card">
+    <h2>Malaysia Loan Example Table</h2>
+    <p>These examples show why loan amount, tenure and interest rate can change your estimated monthly repayment.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Example</th><th>Loan Amount</th><th>Rate</th><th>Tenure</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Car financing example</td><td>RM50,000</td><td>3.0% flat</td><td>7 years</td><td>Estimate monthly instalment</td></tr>
+          <tr><td>Home loan example</td><td>RM300,000</td><td>4.2% reducing</td><td>30 years</td><td>Estimate mortgage repayment</td></tr>
+          <tr><td>Personal loan example</td><td>RM20,000</td><td>8.0% reducing</td><td>5 years</td><td>Estimate personal financing cost</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Loan Calculator FAQ</h2><p>Answers to common questions about estimating loan repayment in Malaysia.</p></div>
+  <div class="faq-list">
+    <details open><summary>How does a loan calculator work in Malaysia?</summary><p>A loan calculator estimates monthly repayment by using loan amount, interest rate and loan tenure. The result is an estimate and may differ from bank offers, fees or insurance charges.</p></details>
+    <details><summary>What information do I need to calculate monthly repayment?</summary><p>You normally need the loan amount, annual interest rate, loan tenure and the type of loan calculation such as flat rate or reducing balance.</p></details>
+    <details><summary>Is this calculator a bank approval tool?</summary><p>No. This calculator is only an educational estimate. Bank approval depends on income, credit profile, debt level, documents and lender policy.</p></details>
+    <details><summary>What is the difference between flat rate and reducing balance?</summary><p>Flat rate commonly calculates interest on the original principal for the full tenure. Reducing balance calculates interest based on the outstanding balance over time.</p></details>
+    <details><summary>How can I reduce my monthly repayment?</summary><p>You may reduce monthly repayment by lowering the loan amount, increasing down payment, extending tenure or comparing a lower interest rate. A longer tenure may increase total interest.</p></details>
+    <details><summary>Can I use this for car, home and personal loans?</summary><p>Yes. The general calculator can estimate different loan examples, but each loan type may have different bank rules and calculation methods.</p></details>
+    <details><summary>Why does total interest increase when tenure is longer?</summary><p>A longer tenure spreads repayment over more months, but interest may be charged for a longer period, increasing the total interest paid.</p></details>
+    <details><summary>Are the results guaranteed?</summary><p>No. All results are estimates only and should be checked with a licensed bank, financial institution or qualified adviser.</p></details>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h3>LoanCalc Malaysia</h3>
+      <p>Free calculator tools to estimate loan repayment, interest cost and affordability before making a financing decision.</p>
+      <p class="small">This website is for general educational use only and does not provide financial advice.</p>
+    </div>
+    <div>
+      <h4>Calculators</h4>
+      <a href="index.html">Loan Calculator</a>
+      <a href="car-loan-calculator.html">Car Loan Calculator</a>
+      <a href="home-loan-calculator.html">Home Loan Calculator</a>
+      <a href="personal-loan-calculator.html">Personal Loan Calculator</a>
+      <a href="dsr-calculator.html">DSR Calculator</a>
+      <a href="early-settlement-calculator.html">Early Settlement Calculator</a>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 LoanCalc Malaysia. All rights reserved.</div>
+</footer>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
