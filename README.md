@@ -25,7 +25,7 @@ Upload all files to GitHub and deploy with Vercel as a static website.
 ## Important Before Going Live
 
 1. Replace `https://www.malaysialoancalculator.com` in HTML files, `robots.txt`, and `sitemap.xml` with your real domain.
-2. Replace `hello@malaysialoancalculator.com` with your real contact email if different.
+2. Replace `malaysialoancalculator@proton.me` with your real contact email if different.
 3. Submit `sitemap.xml` in Google Search Console.
 4. Apply for Google AdSense after the website is indexed and pages are working.
 5. Add AdSense code only after your Google AdSense account gives you the correct publisher code.
