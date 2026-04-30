@@ -33,3 +33,21 @@ Upload all files to GitHub and deploy with Vercel as a static website.
 ## Notes
 
 Calculator results are estimates only and not financial advice.
+
+
+## AdSense Boost v1
+
+Added:
+- terms-of-use.html
+- how-to-calculate-car-loan-malaysia.html
+- home-loan-monthly-repayment-malaysia.html
+- personal-loan-calculator-malaysia-guide.html
+- flat-rate-vs-effective-rate-malaysia.html
+- dsr-calculator-malaysia-guide.html
+- loan-tenure-vs-monthly-repayment.html
+
+Updated:
+- Homepage guide links
+- Footer Terms of Use link
+- sitemap.xml
+- Contact email: malaysialoancalculator@proton.me
