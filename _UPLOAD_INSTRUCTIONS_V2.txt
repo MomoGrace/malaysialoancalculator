@@ -1,0 +1,18 @@
+Upload instructions for v2
+
+1. Extract this ZIP.
+2. Open the extracted folder.
+3. Ctrl + A, then Ctrl + C.
+4. Paste into:
+   Documents > GitHub > malaysialoancalculator
+5. Replace existing files when asked.
+6. Open GitHub Desktop.
+7. Do not upload this _UPLOAD_INSTRUCTIONS_V2.txt file if you do not want it in the repo.
+8. Commit message:
+   Add loan guide hub and affordability articles
+9. Push origin.
+
+After deployment:
+- Open /guides.html
+- Open the 3 new article pages
+- Re-submit sitemap tomorrow or when GSC quota resets.

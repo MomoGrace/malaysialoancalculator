@@ -51,3 +51,17 @@ Updated:
 - Footer Terms of Use link
 - sitemap.xml
 - Contact email: malaysialoancalculator@proton.me
+
+
+## AdSense Boost v2
+
+Added:
+- guides.html
+- rm50000-car-loan-monthly-payment-malaysia.html
+- rm300000-home-loan-monthly-repayment-malaysia.html
+- loan-affordability-malaysia.html
+
+Updated:
+- Footer guide links
+- Homepage guides link
+- sitemap.xml
