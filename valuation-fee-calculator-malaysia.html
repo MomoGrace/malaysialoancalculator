@@ -16,6 +16,21 @@
   <meta name="twitter:card" content="summary" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952834143682557" crossorigin="anonymous"></script>
+  <style>
+    .hero .hero-inner {
+      align-items: flex-start;
+    }
+
+    .hero .hero-inner > div:first-child {
+      padding-top: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .hero .hero-inner > div:first-child {
+        padding-top: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="topbar">Free Malaysia loan calculators for education and planning. Results are estimates only.</div>
@@ -72,7 +87,7 @@
 
     document.getElementById('outPropertyValue').textContent = formatRM(propertyValue);
     document.getElementById('outProfessionalFee').textContent = formatRM(professionalFee);
-    document.getElementById('outMinimumApplied').textContent = minimumApplied ? 'Yes (minimum fee used)' : 'Scale fee used';
+    document.getElementById('outMinimumApplied').textContent = minimumApplied ? 'Minimum applied' : 'Scale fee used';
     document.getElementById('outSstAmount').textContent = formatRM(sstAmount);
     document.getElementById('outDisbursement').textContent = formatRM(disbursement);
     document.getElementById('outTotal').textContent = formatRM(total);
@@ -82,10 +97,9 @@
     document.getElementById('barSst').style.width = (partTotal ? (sstAmount / partTotal) * 100 : 0) + '%';
     document.getElementById('barDisbursement').style.width = (partTotal ? (disbursement / partTotal) * 100 : 0) + '%';
   }
-  document.getElementById('calculateBtn').addEventListener('click', calculate);
-  ['propertyValue', 'valuationPurpose', 'disbursement', 'sst', 'minimumFee'].forEach(function (id) {
-    document.getElementById(id).addEventListener('input', calculate);
-    document.getElementById(id).addEventListener('change', calculate);
+  document.getElementById('calculateBtn').addEventListener('click', function (event) {
+    event.preventDefault();
+    calculate();
   });
   calculate();
 })();
