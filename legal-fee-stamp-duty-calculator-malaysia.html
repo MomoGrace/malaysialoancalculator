@@ -149,11 +149,19 @@
     document.getElementById('barLegal').style.width = legalPct + '%';
     document.getElementById('barLoanStamp').style.width = loanStampPct + '%';
   }
-  document.getElementById('calculateBtn').addEventListener('click', calculate);
-  ['propertyPrice','loanMargin','loanOverride','propertyType'].forEach(function (id) {
-    document.getElementById(id).addEventListener('input', calculate);
-    document.getElementById(id).addEventListener('change', calculate);
+  document.getElementById('calculateBtn').addEventListener('click', function (event) {
+    if (event) event.preventDefault();
+    calculate();
   });
+
+  var calculatorForm = document.querySelector('#calculator form');
+  if (calculatorForm) {
+    calculatorForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
+    });
+  }
+
   calculate();
 })();
 </script>
