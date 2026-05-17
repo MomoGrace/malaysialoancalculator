@@ -64,10 +64,14 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
 .bar-wrap{margin-top:16px;background:#f1f5f9;border-radius:999px;overflow:hidden;height:13px;display:flex}
 .bar-principal{background:var(--brand);height:100%;width:70%}
 .bar-interest{background:var(--accent);height:100%;width:30%}
+.bar-total{background:#0f766e;height:100%;width:0}
+.bar-fee{background:#a16207;height:100%;width:0}
 .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:12px;color:var(--muted)}
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:6px}
 .dot-principal{background:var(--brand)}
 .dot-interest{background:var(--accent)}
+.dot-total{background:#0f766e}
+.dot-fee{background:#a16207}
 .section{max-width:var(--max);margin:0 auto;padding:58px 20px}
 .section.tight{padding-top:34px}
 .section-head{max-width:820px;margin-bottom:24px}

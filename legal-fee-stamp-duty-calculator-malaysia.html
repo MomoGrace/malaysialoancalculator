@@ -21,35 +21,9 @@
 <div class="topbar">Free Malaysia loan calculators for education and planning. Results are estimates only.</div>
 <header class="navbar"><div class="nav-inner"><a class="logo" href="index.html" aria-label="LoanCalc Malaysia Home"><span class="logo-mark">LC</span><span>LoanCalc Malaysia</span></a><nav class="nav-links" aria-label="Main navigation"><a href="car-loan-calculator.html">Car Loan</a><a href="home-loan-calculator.html">Home Loan</a><a href="personal-loan-calculator.html">Personal Loan</a><a href="dsr-calculator.html">DSR</a><a href="early-settlement-calculator.html">Settlement</a><a class="nav-cta" href="index.html#calculator">Calculate Now</a></nav><span class="mobile-menu-note">Menu links below</span></div></header>
 
-<section class="section">
-  <div class="content-card">
-    <span class="eyebrow">Home Buying Cost Calculator Malaysia</span>
-    <h1>Legal Fee & Stamp Duty Calculator Malaysia</h1>
-    <p>Use this <strong>legal fee calculator Malaysia</strong> to estimate <strong>MOT stamp duty Malaysia</strong>, <strong>loan agreement stamp duty Malaysia</strong>, <strong>SPA legal fee Malaysia</strong>, loan legal fees, down payment and total upfront <strong>cost of buying house Malaysia</strong>.</p>
-  </div>
+<section class="hero"><div class="hero-inner"><div><span class="eyebrow">Home Purchase Cost Planning</span><h1>Legal Fee & Stamp Duty Calculator Malaysia</h1><p class="hero-text">Estimate your Malaysia property stamp duty, SPA legal fees, loan agreement stamp duty, loan legal fees, down payment and total upfront home buying costs before purchasing a property.</p><div class="hero-actions"><a class="btn btn-primary" href="#calculator">Calculate Stamp Duty</a><a class="btn btn-secondary" href="home-loan-monthly-repayment-malaysia.html">View Home Loan Guide</a></div></div><div class="calculator-card" id="calculator"><h2>Stamp Duty & Legal Fee Calculator</h2><p class="small">Estimate common upfront property buying costs in Malaysia using purchase price, loan margin and property type.</p><div class="form-grid"><div class="field"><label for="propertyPrice">Property Price / Purchase Price (RM)</label><input id="propertyPrice" type="number" min="0" step="1000" value="500000"></div><div class="field"><label for="loanMargin">Loan Margin (%)</label><input id="loanMargin" type="number" min="0" max="100" step="1" value="90"></div><div class="field"><label for="loanOverride">Manual Loan Amount Override (Optional, RM)</label><input id="loanOverride" type="number" min="0" step="1000" placeholder="Leave blank to auto-calculate"></div><div class="field"><label for="propertyType">Property Type</label><select id="propertyType"><option value="standard">Standard subsale / non-HDA estimate</option><option value="hda">Developer / HDA estimate</option></select></div></div><p><button id="calculateBtn" class="btn btn-primary" type="button">Calculate</button></p><div class="result-grid"><div class="result-box"><span>Property Price</span><strong id="outPrice">RM0</strong></div><div class="result-box"><span>Estimated Loan Amount</span><strong id="outLoan">RM0</strong></div><div class="result-box"><span>Down Payment</span><strong id="outDown">RM0</strong></div><div class="result-box"><span>MOT Stamp Duty</span><strong id="outMot">RM0</strong></div><div class="result-box"><span>Loan Agreement Stamp Duty</span><strong id="outLoanStamp">RM0</strong></div><div class="result-box"><span>SPA Legal Fee Estimate</span><strong id="outSpa">RM0</strong></div><div class="result-box"><span>Loan Legal Fee Estimate</span><strong id="outLoanLegal">RM0</strong></div><div class="result-box"><span>Estimated Total Upfront Cash Needed</span><strong id="outTotal">RM0</strong></div></div><div class="bar-wrap"><div class="bar-principal" id="barDown"></div><div class="bar-interest" id="barMot"></div><div class="bar-total" id="barLegal"></div><div class="bar-fee" id="barLoanStamp"></div></div><div class="legend"><span><i class="dot dot-principal"></i>Down payment</span><span><i class="dot dot-interest"></i>MOT stamp duty</span><span><i class="dot dot-total"></i>Legal fees</span><span><i class="dot dot-fee"></i>Loan agreement stamp duty</span></div><div class="notice" id="negotiableNote" style="display:none; margin-top: 14px;">For values above RM7,500,000, legal fee uses a 1% negotiable estimate for planning only.</div><div class="notice" style="margin-top: 14px;">This calculator provides an estimate only. Actual legal fees, stamp duty, SST, disbursements, valuation fees, bank charges, exemptions, rebates and government policies may vary. Please confirm final figures with your lawyer, bank, LHDN or licensed property professional.</div></div></div></section>
 
-  <div class="content-card" id="calculator">
-    <h2>Stamp Duty & Legal Fee Calculator</h2>
-    <div class="form-grid">
-      <div class="field"><label for="propertyPrice">Property Price / Purchase Price (RM)</label><input id="propertyPrice" type="number" min="0" step="1000" value="500000"></div>
-      <div class="field"><label for="loanMargin">Loan Margin (%)</label><input id="loanMargin" type="number" min="0" max="100" step="1" value="90"></div>
-      <div class="field"><label for="loanOverride">Manual Loan Amount Override (Optional, RM)</label><input id="loanOverride" type="number" min="0" step="1000" placeholder="Leave blank to auto-calculate"></div>
-      <div class="field"><label for="propertyType">Property Type</label><select id="propertyType"><option value="standard">Standard subsale / non-HDA estimate</option><option value="hda">Developer / HDA estimate</option></select></div>
-    </div>
-    <p><button id="calculateBtn" class="btn btn-primary" type="button">Calculate</button></p>
-    <div class="result-grid">
-      <div class="result-box"><span>Property Price</span><strong id="outPrice">RM0</strong></div>
-      <div class="result-box"><span>Estimated Loan Amount</span><strong id="outLoan">RM0</strong></div>
-      <div class="result-box"><span>Down Payment</span><strong id="outDown">RM0</strong></div>
-      <div class="result-box"><span>MOT Stamp Duty</span><strong id="outMot">RM0</strong></div>
-      <div class="result-box"><span>Loan Agreement Stamp Duty</span><strong id="outLoanStamp">RM0</strong></div>
-      <div class="result-box"><span>SPA Legal Fee Estimate</span><strong id="outSpa">RM0</strong></div>
-      <div class="result-box"><span>Loan Legal Fee Estimate</span><strong id="outLoanLegal">RM0</strong></div>
-      <div class="result-box"><span>Estimated Total Upfront Cash Needed</span><strong id="outTotal">RM0</strong></div>
-    </div>
-    <div class="notice" id="negotiableNote" style="display:none; margin-top: 14px;">For values above RM7,500,000, legal fee uses a 1% negotiable estimate for planning only.</div>
-    <div class="notice" style="margin-top: 14px;">This calculator provides an estimate only. Actual legal fees, stamp duty, SST, disbursements, valuation fees, bank charges, exemptions, rebates and government policies may vary. Please confirm final figures with your lawyer, bank, LHDN or licensed property professional.</div>
-  </div>
+<section class="section">
 
   <div class="content-card"><h2>What is stamp duty in Malaysia?</h2><p>Stamp duty is a government tax charged on legal instruments related to property transactions and financing. A <strong>stamp duty calculator Malaysia</strong> helps buyers set a realistic budget before signing documents.</p></div>
   <div class="content-card"><h2>What is MOT stamp duty?</h2><p>MOT stamp duty is charged on the Memorandum of Transfer when property ownership is transferred. It is commonly a major upfront cost for subsale transactions.</p></div>
@@ -125,8 +99,23 @@
     document.getElementById('outLoanLegal').textContent = formatRM(loanLegal);
     document.getElementById('outTotal').textContent = formatRM(total);
     document.getElementById('negotiableNote').style.display = (spaTable.negotiable || loanTable.negotiable) ? 'block' : 'none';
+
+    var legalTotal = spaLegal + loanLegal;
+    var breakdownTotal = down + mot + legalTotal + loanStamp;
+    var downPct = breakdownTotal > 0 ? (down / breakdownTotal) * 100 : 0;
+    var motPct = breakdownTotal > 0 ? (mot / breakdownTotal) * 100 : 0;
+    var legalPct = breakdownTotal > 0 ? (legalTotal / breakdownTotal) * 100 : 0;
+    var loanStampPct = breakdownTotal > 0 ? (loanStamp / breakdownTotal) * 100 : 0;
+    document.getElementById('barDown').style.width = downPct + '%';
+    document.getElementById('barMot').style.width = motPct + '%';
+    document.getElementById('barLegal').style.width = legalPct + '%';
+    document.getElementById('barLoanStamp').style.width = loanStampPct + '%';
   }
   document.getElementById('calculateBtn').addEventListener('click', calculate);
+  ['propertyPrice','loanMargin','loanOverride','propertyType'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', calculate);
+    document.getElementById(id).addEventListener('change', calculate);
+  });
   calculate();
 })();
 </script>
