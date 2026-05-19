@@ -113,6 +113,89 @@ function calculateEarly(){
   setText("earlyFutureInterest", fmt(Math.max(0, estimatedInterest)));
   setText("earlyApproxSettlement", fmt(balance));
 }
+function addJsonLd(schema){
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.text = JSON.stringify(schema);
+  document.head.appendChild(script);
+}
+function buildBreadcrumbSchema(){
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
+  const slug = path === "/" ? "Home" : path.split("/").pop().replace(".html", "").split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  const currentUrl = path === "/" ? "https://www.malaysialoancalculator.com/" : `https://www.malaysialoancalculator.com${path}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.malaysialoancalculator.com/" },
+      ...(path === "/" ? [] : [{ "@type": "ListItem", position: 2, name: slug, item: currentUrl }])
+    ]
+  };
+}
+function injectSchemas(){
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
+  const currentUrl = path === "/" ? "https://www.malaysialoancalculator.com/" : `https://www.malaysialoancalculator.com${path}`;
+  const title = document.querySelector("h1")?.textContent?.trim() || document.title;
+  const description = document.querySelector('meta[name="description"]')?.getAttribute("content") || "";
+  const isCalculatorPage = path.includes("calculator");
+  const nonArticlePages = ["/", "/about.html", "/contact.html", "/privacy.html", "/terms-of-use.html", "/disclaimer.html", "/404.html", "/guides.html", "/sitemap.xml"];
+  const isGuideOrArticlePage = !isCalculatorPage && !nonArticlePages.includes(path);
+  addJsonLd({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Malaysia Loan Calculator",
+    url: "https://www.malaysialoancalculator.com/",
+    inLanguage: "en-MY"
+  });
+  addJsonLd({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Malaysia Loan Calculator",
+    url: "https://www.malaysialoancalculator.com/"
+  });
+  addJsonLd(buildBreadcrumbSchema());
+  if(isCalculatorPage){
+    addJsonLd({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: title,
+      applicationCategory: "FinanceApplication",
+      operatingSystem: "Web",
+      url: currentUrl,
+      description
+    });
+  }
+  if(isGuideOrArticlePage){
+    addJsonLd({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: title,
+      description,
+      mainEntityOfPage: currentUrl,
+      author: {
+        "@type": "Organization",
+        name: "Malaysia Loan Calculator"
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Malaysia Loan Calculator"
+      }
+    });
+  }
+  const faqItems = Array.from(document.querySelectorAll(".faq-list details")).map((item) => {
+    const q = item.querySelector("summary")?.textContent?.trim();
+    const a = item.querySelector("p")?.textContent?.trim();
+    if(!q || !a) return null;
+    return { "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } };
+  }).filter(Boolean);
+  if(faqItems.length > 0){
+    addJsonLd({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqItems
+    });
+  }
+}
 document.addEventListener("DOMContentLoaded", () => {
   ["loanAmount","interestRate","loanYears","loanType"].forEach(id => document.getElementById(id)?.addEventListener("input", calculateGeneral));
   ["carPrice","carDown","carRate","carYears"].forEach(id => document.getElementById(id)?.addEventListener("input", calculateCar));
@@ -126,4 +209,5 @@ document.addEventListener("DOMContentLoaded", () => {
   calculatePersonal();
   calculateDSR();
   calculateEarly();
+  injectSchemas();
 });
