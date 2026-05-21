@@ -172,29 +172,7 @@ function initGuideFilters(){
     return new URLSearchParams(window.location.search).get('category') || 'all';
   }
 
-  function writeCategoryToUrl(selected){
-    const params = new URLSearchParams(window.location.search);
-    if(selected === 'all'){
-      params.delete('category');
-    }else{
-      const slugByCategory = {car:'car-loan',home:'home-loan',personal:'personal-loan',general:'general-finance'};
-      params.set('category', slugByCategory[selected] || selected);
-    }
-    const query = params.toString();
-    const nextUrl = query ? `${window.location.pathname}?${query}` : window.location.pathname;
-    window.history.replaceState({}, '', nextUrl);
-  }
-
   applyFilter(readCategoryFromUrl());
-
-  buttons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
-      const selected = button.getAttribute('data-category') || 'all';
-      applyFilter(selected);
-      writeCategoryToUrl(selected);
-    });
-  });
 }
 function injectSchemas(){
   const path = window.location.pathname.replace(/\/$/, "") || "/";

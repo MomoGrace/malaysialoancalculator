@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
     .guide-filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;position:relative;z-index:2;pointer-events:auto}
-    .guide-filter-btn{border:1px solid var(--line);background:#fff;color:var(--text);border-radius:999px;padding:9px 14px;font-weight:800;cursor:pointer;font-size:14px}
+    .guide-filter-btn{border:1px solid var(--line);background:#fff;color:var(--text);border-radius:999px;padding:9px 14px;font-weight:800;cursor:pointer;font-size:14px;display:inline-block;position:relative;z-index:3;pointer-events:auto;text-decoration:none}
     .guide-filter-btn.is-active{background:var(--brand);color:#fff;border-color:var(--brand)}
     .guides-empty-state{display:none;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;color:#475569}
   </style>
@@ -54,11 +54,11 @@
     <p>Browse practical Malaysia loan guides about car loans, home loans, personal loans, DSR, affordability, monthly repayment, interest rates and loan tenure. These guides support our free calculator tools and help users understand the numbers before applying.</p>
   </div>
   <div class="guide-filters" aria-label="Guide categories">
-    <a class="guide-filter-btn" href="guides.html" data-category="all">All</a>
-    <a class="guide-filter-btn" href="guides.html?category=car-loan" data-category="car">Car Loan</a>
-    <a class="guide-filter-btn" href="guides.html?category=home-loan" data-category="home">Home Loan</a>
-    <a class="guide-filter-btn" href="guides.html?category=personal-loan" data-category="personal">Personal Loan</a>
-    <a class="guide-filter-btn" href="guides.html?category=general-finance" data-category="general">General Finance</a>
+    <a class="guide-filter-btn" href="/guides" data-category="all">All</a>
+    <a class="guide-filter-btn" href="/guides?category=car-loan" data-category="car">Car Loan</a>
+    <a class="guide-filter-btn" href="/guides?category=home-loan" data-category="home">Home Loan</a>
+    <a class="guide-filter-btn" href="/guides?category=personal-loan" data-category="personal">Personal Loan</a>
+    <a class="guide-filter-btn" href="/guides?category=general-finance" data-category="general">General Finance</a>
   </div>
   <div class="cards">
     <a class="card" data-category="car" href="how-to-calculate-car-loan-malaysia.html"><div class="card-icon">📘</div><h3>How to Calculate Car Loan Monthly Payment in Malaysia</h3><p>Understand flat rate, down payment and car loan instalment estimates.</p></a>
