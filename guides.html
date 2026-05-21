@@ -52,12 +52,12 @@
     <h1>Malaysia Loan Guides</h1>
     <p>Browse practical Malaysia loan guides about car loans, home loans, personal loans, DSR, affordability, monthly repayment, interest rates and loan tenure. These guides support our free calculator tools and help users understand the numbers before applying.</p>
   </div>
-  <div class="guide-filters" role="tablist" aria-label="Guide categories">
-    <button class="guide-filter-btn is-active" type="button" data-category="all">All</button>
-    <button class="guide-filter-btn" type="button" data-category="car">Car Loan</button>
-    <button class="guide-filter-btn" type="button" data-category="home">Home Loan</button>
-    <button class="guide-filter-btn" type="button" data-category="personal">Personal Loan</button>
-    <button class="guide-filter-btn" type="button" data-category="general">General Finance</button>
+  <div class="guide-filters" aria-label="Guide categories">
+    <a class="guide-filter-btn" href="guides.html" data-category="all">All</a>
+    <a class="guide-filter-btn" href="guides.html?category=car-loan" data-category="car">Car Loan</a>
+    <a class="guide-filter-btn" href="guides.html?category=home-loan" data-category="home">Home Loan</a>
+    <a class="guide-filter-btn" href="guides.html?category=personal-loan" data-category="personal">Personal Loan</a>
+    <a class="guide-filter-btn" href="guides.html?category=general-finance" data-category="general">General Finance</a>
   </div>
   <div class="cards">
     <a class="card" data-category="car" href="how-to-calculate-car-loan-malaysia.html"><div class="card-icon">📘</div><h3>How to Calculate Car Loan Monthly Payment in Malaysia</h3><p>Understand flat rate, down payment and car loan instalment estimates.</p></a>
@@ -147,30 +147,29 @@
     var emptyState = document.getElementById('guidesEmptyState');
     if(!buttons.length || !cards.length || !emptyState) return;
 
-    function applyFilter(category){
-      var selected = category || 'all';
-      var visibleCount = 0;
-      cards.forEach(function(card){
-        var show = selected === 'all' || card.getAttribute('data-category') === selected;
-        card.style.display = show ? '' : 'none';
-        if(show) visibleCount += 1;
-      });
-      emptyState.style.display = visibleCount ? 'none' : 'block';
+    var paramCategory = new URLSearchParams(window.location.search).get('category');
+    var categoryMap = {
+      'car-loan': 'car',
+      'home-loan': 'home',
+      'personal-loan': 'personal',
+      'general-finance': 'general'
+    };
+    var selected = categoryMap[paramCategory] || 'all';
+    var visibleCount = 0;
 
-      buttons.forEach(function(button){
-        var active = button.getAttribute('data-category') === selected;
-        button.classList.toggle('is-active', active);
-        button.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-    }
+    cards.forEach(function(card){
+      var show = selected === 'all' || card.getAttribute('data-category') === selected;
+      card.style.display = show ? '' : 'none';
+      if(show) visibleCount += 1;
+    });
+    emptyState.style.display = visibleCount ? 'none' : 'block';
 
     buttons.forEach(function(button){
-      button.addEventListener('click', function(){
-        applyFilter(button.getAttribute('data-category'));
-      });
+      var active = button.getAttribute('data-category') === selected;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-current', active ? 'page' : 'false');
     });
 
-    applyFilter('all');
     window.__guidesFilterReady = true;
   }
 
