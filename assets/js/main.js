@@ -132,6 +132,70 @@ function buildBreadcrumbSchema(){
     ]
   };
 }
+
+function initGuideFilters(){
+  const buttons = Array.from(document.querySelectorAll('.guide-filter-btn[data-category]'));
+  const cards = Array.from(document.querySelectorAll('.cards .card[data-category]'));
+  const emptyState = document.getElementById('guidesEmptyState');
+  if(!buttons.length || !cards.length || !emptyState) return;
+
+  const categoryMap = {
+    'car-loan': 'car',
+    'home-loan': 'home',
+    'personal-loan': 'personal',
+    'general-finance': 'general',
+    'all': 'all',
+    'car': 'car',
+    'home': 'home',
+    'personal': 'personal',
+    'general': 'general'
+  };
+
+  function applyFilter(rawCategory){
+    const selected = categoryMap[rawCategory] || 'all';
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      const show = selected === 'all' || card.getAttribute('data-category') === selected;
+      card.style.display = show ? '' : 'none';
+      if(show) visibleCount += 1;
+    });
+    emptyState.style.display = visibleCount ? 'none' : 'block';
+
+    buttons.forEach((button) => {
+      const active = button.getAttribute('data-category') === selected;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-current', active ? 'page' : 'false');
+    });
+  }
+
+  function readCategoryFromUrl(){
+    return new URLSearchParams(window.location.search).get('category') || 'all';
+  }
+
+  function writeCategoryToUrl(selected){
+    const params = new URLSearchParams(window.location.search);
+    if(selected === 'all'){
+      params.delete('category');
+    }else{
+      const slugByCategory = {car:'car-loan',home:'home-loan',personal:'personal-loan',general:'general-finance'};
+      params.set('category', slugByCategory[selected] || selected);
+    }
+    const query = params.toString();
+    const nextUrl = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+    window.history.replaceState({}, '', nextUrl);
+  }
+
+  applyFilter(readCategoryFromUrl());
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      const selected = button.getAttribute('data-category') || 'all';
+      applyFilter(selected);
+      writeCategoryToUrl(selected);
+    });
+  });
+}
 function injectSchemas(){
   const path = window.location.pathname.replace(/\/$/, "") || "/";
   const currentUrl = path === "/" ? "https://www.malaysialoancalculator.com/" : `https://www.malaysialoancalculator.com${path}`;
@@ -210,4 +274,5 @@ document.addEventListener("DOMContentLoaded", () => {
   calculateDSR();
   calculateEarly();
   injectSchemas();
+  initGuideFilters();
 });
