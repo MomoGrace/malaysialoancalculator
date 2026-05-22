@@ -173,6 +173,11 @@ function initGuideFilters(){
   }
 
   applyFilter(readCategoryFromUrl());
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      applyFilter(button.getAttribute('data-category'));
+    });
+  });
 }
 function injectSchemas(){
   const path = window.location.pathname.replace(/\/$/, "") || "/";
